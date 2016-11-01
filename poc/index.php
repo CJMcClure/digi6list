@@ -5,6 +5,31 @@
 	<meta charset="utf-8">
 </head>
 <body>
-	<p>Proof of Concept page</p>
+	<ol>
+		<li>
+			<input type="text" placeholder="Item" />
+			<input type="submit" value="+" />
+		</li>
+		<li>
+			<input type="text" placeholder="Item" />
+			<input type="submit" value="+" />
+		</li>
+		<li>
+			<input type="text" placeholder="Item" />
+			<input type="submit" value="+" />
+		</li>
+		<li>
+			<input type="text" placeholder="Item" />
+			<input type="submit" value="+" />
+		</li>
+		<li>
+			<input type="text" placeholder="Item" />
+			<input type="submit" value="+" />
+		</li>
+		<li>
+			<input type="text" placeholder="Item" />
+			<input type="submit" value="+" />
+		</li>
+	</ol>
 </body>
 </html>

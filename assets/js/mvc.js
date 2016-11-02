@@ -13,6 +13,25 @@ class View
 	{
 		console.log("View Created");
 	}
+
+	removeTaskInput(_task)
+	{
+		var taskCon = document.querySelector('ul').children[_task.index];
+		while(taskCon.hasChildNodes())
+		{
+			taskCon.removeChild(taskCon.firstChild);
+		}
+	}
+
+	commitTask(_task)
+	{
+		var taskIndex = document.querySelector('ul').children[_task.index];
+
+		var task = document.createElement('p');
+			task.innerHTML = _task.task;
+
+			taskIndex.appendChild(task);
+	}
 }
 
 class Controller
@@ -26,10 +45,10 @@ class Controller
 
 	addTask(_index,_task)
 	{
-		let addTask = new Task(_index,_task);
-		this.model.sixList.splice(addTask.index, 0, addTask);
-		console.log(addTask.index + " " + addTask.task);
-		console.log(this.model.sixList[addTask.index]);
+		let newTask = new Task(_index,_task);
+		this.model.sixList.splice(newTask.index, 0, newTask);
+		this.view.removeTaskInput(newTask);
+		this.view.commitTask(newTask);
 	}
 }
 

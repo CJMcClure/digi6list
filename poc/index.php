@@ -7,27 +7,27 @@
 <body>
 	<ol>
 		<li>
-			<input type="text" placeholder="Item" />
+			<input type="text" placeholder="Task" />
 			<input type="submit" value="+" />
 		</li>
 		<li>
-			<input type="text" placeholder="Item" />
+			<input type="text" placeholder="Task" />
 			<input type="submit" value="+" />
 		</li>
 		<li>
-			<input type="text" placeholder="Item" />
+			<input type="text" placeholder="Task" />
 			<input type="submit" value="+" />
 		</li>
 		<li>
-			<input type="text" placeholder="Item" />
+			<input type="text" placeholder="Task" />
 			<input type="submit" value="+" />
 		</li>
 		<li>
-			<input type="text" placeholder="Item" />
+			<input type="text" placeholder="Task" />
 			<input type="submit" value="+" />
 		</li>
 		<li>
-			<input type="text" placeholder="Item" />
+			<input type="text" placeholder="Task" />
 			<input type="submit" value="+" />
 		</li>
 	</ol>

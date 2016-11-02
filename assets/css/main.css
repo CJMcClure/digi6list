@@ -1,0 +1,14 @@
+body
+{
+	padding: 0;
+	margin: 0;
+	font: 1em/1.4em Helvetica,Arial,sans-serif;
+	color: #444;
+}
+
+ul
+{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}

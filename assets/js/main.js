@@ -5,13 +5,20 @@
 		el.addEventListener("click", function(e){
 			e.preventDefault();
 			var index = el.parentNode.getAttribute('data-item');
-			var task = el.parentNode.childNodes[1].value;
+			var task = el.parentNode.children[1].value;
 
 			App.addTask(index,task);
 		});
 	});
 
+	var date = new Date();
+	document.querySelector('h1').innerHTML = date.getMonth()+"/"+date.getDate()+"/"+date.getFullYear();
+
 	window.addEventListener('onbeforeunload', function(){
-		//Save the sixlist object to localstorage
+		if(App.model.sixList != null)
+		{
+			
+		}
+
 	});
 })();

@@ -27,9 +27,13 @@ class View
 	{
 		var taskIndex = document.querySelector('ul').children[_task.index];
 
-		var task = document.createElement('p');
+		var task = document.createElement('span');
 			task.innerHTML = _task.task;
 
+		var complete = document.createElement('input');
+			complete.setAttribute('type','checkbox');
+
+			taskIndex.appendChild(complete);
 			taskIndex.appendChild(task);
 	}
 }

@@ -7,6 +7,7 @@
 </head>
 <body>
 	<h1></h1>
+	<h2></h2>
 	<ul>
 		<li data-item="0">
 			<input type="submit" value="+" class="add" />

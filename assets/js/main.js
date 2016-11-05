@@ -11,7 +11,8 @@
 
 			if(task != "")
 			{
-				App.addTask(index,task);
+				let newTask = new Task(index,task);
+				App.taskHandler([newTask]);
 			}
 		});
 	});

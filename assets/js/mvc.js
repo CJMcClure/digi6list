@@ -6,7 +6,7 @@ class Model
 		this.sixList = new Array(6);
 	}
 
-	saveLocal()
+	checkIn()
 	{
 		var data = JSON.stringify(this.sixList); 
 		localStorage.setItem('list',data);
@@ -57,23 +57,23 @@ class Controller
 	{
 		if(localStorage.getItem('list'))
 		{
-			JSON.parse(localStorage.getItem('list')).forEach((el)=>{
-				if(el != null) 
-				{
-					this.view.removeTaskInput(el);
-					this.view.commitTask(el);
-				}
-			});
+			var tasks = JSON.parse(localStorage.getItem('list'));
+			this.taskHandler(tasks);
 		}
 	}
 
-	addTask(_index,_task)
+	taskHandler(arr)
 	{
-		let newTask = new Task(_index,_task);
-		this.model.sixList.splice(newTask.index, 0, newTask);
-		this.model.saveLocal();
-		this.view.removeTaskInput(newTask);
-		this.view.commitTask(newTask);
+		arr.forEach((el)=>{
+			if(el != null)
+			{
+				this.model.sixList.splice(el.index, 0, el);
+				this.view.removeTaskInput(el);
+				this.view.commitTask(el);
+			}
+		});
+
+		this.model.checkIn();
 	}
 }
 
@@ -84,6 +84,7 @@ class Task
 		console.log("New Task Created");
 		this.index = _index;
 		this.task = _task;
+		this.complete = false;
 	}
 }
 

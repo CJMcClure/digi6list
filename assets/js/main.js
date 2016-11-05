@@ -17,6 +17,8 @@
 		});
 	});
 
+	/*************************************************************************************************************/
+
 	document.querySelectorAll("input[type='checkBox']").forEach((el)=>{
 		el.addEventListener('click', (e)=>{
 			var state;

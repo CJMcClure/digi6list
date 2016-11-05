@@ -43,19 +43,28 @@ class View
 			taskIndex.appendChild(task);
 	}
 
-	microUtils()
+	microUtils(element)
 	{
 		var a = document.createElement('ul');
 			a.setAttribute('class', 'microUtils');
 
 		var b = document.createElement('li');
 			b.innerHTML = "Complete";
+			b.addEventListener("click", function(){
+				//Will figure out task completion feedback later
+			});
 
 		var c = document.createElement('li');
 			c.innerHTML = "Edit";
+			c.addEventListener("click", function(){
+				console.log("Edit");
+			});
 
 		var d = document.createElement('li');
 			d.innerHTML = "Add Step";
+			d.addEventListener("click", function(){
+				console.log("Add Step");
+			});
 
 			a.appendChild(b);
 			a.appendChild(c);
@@ -99,7 +108,7 @@ class Controller
 
 	toggleMicroUtils(bool, el)
 	{
-		bool === true? el.parentNode.appendChild(this.view.microUtils()) : el.parentNode.removeChild(el.parentNode.lastChild);
+		bool === true? el.parentNode.appendChild(this.view.microUtils(el)) : el.parentNode.removeChild(el.parentNode.lastChild);
 	}
 }
 

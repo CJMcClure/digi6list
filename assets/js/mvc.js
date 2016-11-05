@@ -5,6 +5,12 @@ class Model
 		console.log("Model Created");
 		this.sixList = new Array(6);
 	}
+
+	saveLocal()
+	{
+		var data = JSON.stringify(this.sixList); 
+		localStorage.setItem('list',data);
+	}
 }
 
 class View 
@@ -47,10 +53,25 @@ class Controller
 		this.view = new View();
 	}
 
+	checkLocal()
+	{
+		if(localStorage.getItem('list'))
+		{
+			JSON.parse(localStorage.getItem('list')).forEach((el)=>{
+				if(el != null) 
+				{
+					this.view.removeTaskInput(el);
+					this.view.commitTask(el);
+				}
+			});
+		}
+	}
+
 	addTask(_index,_task)
 	{
 		let newTask = new Task(_index,_task);
 		this.model.sixList.splice(newTask.index, 0, newTask);
+		this.model.saveLocal();
 		this.view.removeTaskInput(newTask);
 		this.view.commitTask(newTask);
 	}

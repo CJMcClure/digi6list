@@ -1,5 +1,7 @@
 (function(){
 	var App = new Controller();
+
+	App.checkLocal();
 	
 	document.querySelectorAll("input[type='submit']").forEach((el)=>{
 		el.addEventListener("click", function(e){
@@ -7,14 +9,17 @@
 			var index = el.parentNode.getAttribute('data-item');
 			var task = el.parentNode.children[1].value;
 
-			App.addTask(index,task);
+			if(task != "")
+			{
+				App.addTask(index,task);
+			}
 		});
 	});
 
-
+	/*************************************************************************************************************/
 
 	var date = new Date();
-	document.querySelector('h1').innerHTML = date.getMonth()+"/"+date.getDate()+"/"+date.getFullYear();
+	document.querySelector('h1').innerHTML = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear();
 	
 	/*************************************************************************************************************/
 	setInterval(setTime,1000);
@@ -30,16 +35,4 @@
 		document.querySelector('h2').innerHTML = time;
 	}
 	/*************************************************************************************************************/
-
-	window.addEventListener('onunload', function(){
-		if(App.model.sixList != null)
-		{
-			alert("not empty");
-		}
-		else
-		{
-			alert("is empty");
-		}
-
-	});
 })();

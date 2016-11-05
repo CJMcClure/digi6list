@@ -42,6 +42,27 @@ class View
 			taskIndex.appendChild(complete);
 			taskIndex.appendChild(task);
 	}
+
+	microUtils()
+	{
+		var a = document.createElement('ul');
+			a.setAttribute('class', 'microUtils');
+
+		var b = document.createElement('li');
+			b.innerHTML = "Complete";
+
+		var c = document.createElement('li');
+			c.innerHTML = "Edit";
+
+		var d = document.createElement('li');
+			d.innerHTML = "Add Step";
+
+			a.appendChild(b);
+			a.appendChild(c);
+			a.appendChild(d);
+
+		return a;
+	}
 }
 
 class Controller
@@ -74,6 +95,11 @@ class Controller
 		});
 
 		this.model.checkIn();
+	}
+
+	toggleMicroUtils(bool, el)
+	{
+		bool === true? el.parentNode.appendChild(this.view.microUtils()) : el.parentNode.removeChild(el.parentNode.lastChild);
 	}
 }
 

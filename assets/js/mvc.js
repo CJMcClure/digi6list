@@ -43,6 +43,11 @@ class View
 			taskIndex.appendChild(task);
 	}
 
+	editTask()
+	{
+		
+	}
+
 	microUtils(element)
 	{
 		var a = document.createElement('ul');

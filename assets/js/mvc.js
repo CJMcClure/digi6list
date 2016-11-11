@@ -62,13 +62,13 @@ class View
 		var c = document.createElement('li');
 			c.innerHTML = "Edit";
 			c.addEventListener("click", function(){
-				console.log("Edit");
+				
 			});
 
 		var d = document.createElement('li');
-			d.innerHTML = "Add Step";
+			d.innerHTML = "Steps";
 			d.addEventListener("click", function(){
-				console.log("Add Step");
+				window.location.href = "steps.php";
 			});
 
 			a.appendChild(b);

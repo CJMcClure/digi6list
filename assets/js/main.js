@@ -33,17 +33,4 @@
 	document.querySelector('h1').innerHTML = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear();
 	
 	/*************************************************************************************************************/
-	setInterval(setTime,1000);
-	
-	function setTime()
-	{
-		var date = new Date();
-		var hours = (24 - date.getHours()) < 10 ? "0" + (24 - date.getHours()) : (24 - date.getHours());
-		var minutes = (59 - date.getMinutes()) < 10 ? "0" + (59 - date.getMinutes()) : (59 - date.getMinutes());
-		var seconds = (59 - date.getSeconds()) < 10 ? "0" + (59 - date.getSeconds()) : (59 - date.getSeconds());;
-
-		var time = hours + ":" + minutes + ":" + seconds;
-		document.querySelector('h2').innerHTML = time;
-	}
-	/*************************************************************************************************************/
 })();

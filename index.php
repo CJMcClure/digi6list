@@ -4,6 +4,7 @@
 	<title>pnp5 | Proof of Concept</title>
 	<meta charset="utf-8">
 	<link type="text/css" rel="stylesheet" href="assets/css/main.css">
+	<script src="assets/js/countdown.js"></script>
 </head>
 <body>
 	<h1></h1>

@@ -1,0 +1,22 @@
+---
+# Start GIT tasks ###########################################################################################
+
+- name: Setup git in project directory
+  shell: "{{ item }}"
+  with_items:
+     - git init
+     - git remote add origin {{ git['repo'] }}
+     - git pull origin {{ git['branch'] }}
+  args:
+    chdir: "{{ git['dir'] }}"
+  
+
+ 
+
+
+  
+    
+
+
+
+

@@ -1,0 +1,11 @@
+---
+# Any undefined variables are defined on a higher level.
+# If you are using this Wordpress playbook by itself, define 
+# these variables
+
+mysql:
+  user:
+  password:
+
+nginx:
+  domain: digi6list

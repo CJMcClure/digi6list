@@ -1,0 +1,23 @@
+
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name {{ nginx['domain'] }}.{{system['ip']}}.xip.io;
+
+    root /var/www/{{ nginx['domain'] }};
+    index index.php index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php7.1-fpm.sock;
+    }
+
+    location ~ /\.ht {
+        deny  all;
+    }
+}

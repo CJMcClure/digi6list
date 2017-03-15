@@ -1,0 +1,28 @@
+---
+- name: Restore database
+  mysql_db:
+    name: all
+    state: import
+    target: /var/www/bloggymcbloggins/Database/mcbloggers_mcusers.sql
+
+- name: Restore database
+  mysql_db:
+    name: all
+    state: import
+    target: /var/www/bloggymcbloggins/Database/mcbloggers_kimmymcclure_mcbloggins_blog.sql
+
+- name: Create non-root user
+  mysql_user:
+    name: "{{ mysql['user'] }}"
+    password: "{{ mysql['password'] }}"
+    priv: 'mcbloggers.*:ALL'
+    state: present
+ 
+
+
+  
+    
+
+
+
+

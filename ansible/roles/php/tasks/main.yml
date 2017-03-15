@@ -1,0 +1,31 @@
+---
+- name: Add PHP Server Config
+  template: 
+    src: nginx_server_block.j2 
+    dest: /etc/nginx/sites-available/{{ nginx['domain'] }} 
+    mode: 0700
+
+- name: Enable PHP Site Config
+  file: 
+    src: /etc/nginx/sites-available/{{ nginx['domain'] }}
+    dest: /etc/nginx/sites-enabled/{{ nginx['domain'] }}
+    state: link
+
+- file:
+    path: /var/www/{{ nginx['domain'] }}
+    owner: "{{ system['user'] }}"
+    group: www-data
+    state: directory
+    mode: 0755
+  notify:
+    - Reload Nginx
+    - Restart FPM
+ 
+
+
+  
+    
+
+
+
+

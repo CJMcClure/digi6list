@@ -1,0 +1,5 @@
+---
+git:
+  dir: /var/www/digi6list
+  repo: https://github.com/CJMcClure/digi6list
+  branch: master
